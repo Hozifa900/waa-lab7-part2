@@ -1,0 +1,25 @@
+type Account {
+  accountnumber: String!
+  accountHolder: String!
+  balance: float!
+  entryList: [AccountEntry]
+}
+
+type AccountEntry {
+  date: String!
+  amount: float!
+  description: String!
+}
+
+type Query {
+  getAccount(accountnumber: String!): Account
+
+  searchBooks(author: String): [Book]
+}
+
+type Mutation {
+  deleteAccount(accountnumber: String!): null
+  createAccount(accountnumber: String!): null
+  deposit(accountnumber: String!, amount: float ): null
+  withdraw(accountnumber: String!, amount float): null
+}
